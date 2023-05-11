@@ -46,6 +46,8 @@ class AjoutOeuvre extends React.Component {
                 }
             }).then((resultat) => {
                 this.props.modifieOeuvre(resultat.data)
+
+                document.getElementById("nom-oeuvre-" + this.props.oeuvreActuelle.id).innerText = this.state.nomOeuvre
             })
         } else {
             let indexRandom = Math.floor(Math.random()*this.state.images.length)

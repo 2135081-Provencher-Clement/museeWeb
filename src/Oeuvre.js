@@ -20,7 +20,7 @@ class Oeuvre extends React.Component {
         return (
             <div onClick={this.handleSetOeuvre} id={"oeuvre-" + this.props.id}>
                 <img class="tiny-oeuvre" src={require("./Images/" + this.props.urlImage)}/>
-                <p class="tiny-titre">{this.props.titre}</p>
+                <p class="tiny-titre" id={"nom-oeuvre-" + this.props.id}>{this.props.titre}</p>
             </div>
         );
     }
