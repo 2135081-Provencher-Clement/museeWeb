@@ -81,13 +81,13 @@ class Main extends React.Component {
                 delete document.getElementById("oeuvre-" + id)
 
                 this.changerOeuvres()
-                
+
+                this.changerOeuvreHasard();
+
                 alert("oeuvre supprimée avec succès")
             }).catch((error) => {
 
         })
-
-        this.changerOeuvreHasard();
     }
 
     setOeuvre = (oeuvre) => {

@@ -35,7 +35,7 @@ class AjoutOeuvre extends React.Component {
 
         if(this.state.modifier === true) {
             axios({
-                method: 'post',
+                method: 'put',
                 url: 'http://museeApi.dvl.to/oeuvre/' + this.props.oeuvreActuelle.id,
                 data : {
                     "titre": this.state.nomOeuvre,
@@ -51,7 +51,7 @@ class AjoutOeuvre extends React.Component {
             let indexRandom = Math.floor(Math.random()*this.state.images.length)
             let image = this.state.images[indexRandom]
             axios({
-                method: 'put',
+                method: 'post',
                 url: 'http://museeApi.dvl.to/oeuvre',
                 data : {
                     "titre": this.state.nomOeuvre,
