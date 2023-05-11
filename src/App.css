@@ -6,12 +6,37 @@
   display: flex;
   flex-direction: column;
   padding: 15px;
+  align-items: center;
+}
+
+#inputOeuvre {
+  margin: 15px;
+  margin-bottom: 100px;
+
+}
+
+#boutonPoubelle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#poub {
+  max-width: 50px;
+  padding: 20px;
 }
 .bouton-pour-changer {
   background-color: yellow;
   color: #282c34;
   border-radius: 20px;
   padding: 20px;
+}
+.contenant {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.tiny-titre {
+  margin: 0px;
 }
 
 .titre {
@@ -20,9 +45,20 @@
 }
 
 .main-oeuvre {
-  max-height: 500px;
-  border-radius: 10px;
+  max-height: 350px;
+  max-width: 350px;
+  border-radius: 40px;
   padding: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+.tiny-oeuvre {
+  max-height: 150px;
+  max-width: 150px;
+  border-radius: 60px;
+  padding: 10px;
+  padding-bottom: 0px;
 }
 
 .App-logo {

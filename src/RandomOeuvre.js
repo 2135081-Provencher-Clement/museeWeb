@@ -1,33 +1,30 @@
 import React from 'react';
-import axios from "axios";
 
 
 class RandomOeuvre extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            titre: "Sans titre",
-            urlImage: "placeholder.jpg"
-        };
+        this.state = {};
     }
 
-    changerOeuvre = () => {
-        axios({
-            method: 'get',
-            url: 'http://museeApi.dvl.to/oeuvre'
-        })
-            .then((resultat) => {
-                this.setState({titre: resultat.data.oeuvre[0].titre})
-                //this.setState({urlImage: resultat.data.oeuvre[0].urlImage})
-            })
+    componentDidMount() {
+        this.props.changerOeuvreHasard()
+    }
+
+    handleSupprimerOeuvre = () => {
+        this.props.supprimerOeuvre(this.props.oeuvreActuelle.id)
     }
 
     render() {
         return (
             <div class="contenant-vertical">
-                <p class="titre">{this.state.titre}</p>
-                <img class="main-oeuvre" src={require("./Images/" + this.state.urlImage)}/>
-                <button class="bouton-pour-changer" onClick={this.changerOeuvre}>Changer l'oeuvre</button>
+                <div class="titre">{this.props.oeuvreActuelle.titre}</div>
+
+                <img class="main-oeuvre" src={require("./Images/" + this.props.oeuvreActuelle.urlImage)}/>
+                <div id="boutonPoubelle">
+                <img id={"poub"} src={require("./Images/poubelle.png")} onClick={this.handleSupprimerOeuvre}/>
+                <button class="bouton-pour-changer" onClick={this.props.changerOeuvreHasard}>Afficher un oeuvre au hasard</button>
+                </div>
             </div>
         );
     }
